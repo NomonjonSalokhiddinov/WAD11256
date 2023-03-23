@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Transactions;
-using WAD11256API.Repository;
 using WAD11256API.Models;
+using WAD11256API.Interfaces;
 
 namespace WAD11256API.Controllers
 {

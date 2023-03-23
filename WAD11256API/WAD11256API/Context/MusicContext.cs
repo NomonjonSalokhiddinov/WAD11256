@@ -13,5 +13,6 @@ namespace WAD11256API.Context
         // Music Database
         public DbSet<Music> Musics { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

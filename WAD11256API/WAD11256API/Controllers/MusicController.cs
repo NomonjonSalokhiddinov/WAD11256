@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Transactions;
-using WAD11256API.Repository;
 using WAD11256API.Models;
+using WAD11256API.Repository;
+using WAD11256API.Interfaces;
+using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WAD11256API.Controllers
 {
@@ -11,6 +15,7 @@ namespace WAD11256API.Controllers
     public class MusicController : ControllerBase
     {
         private readonly IMusicRepository _musicRepository;
+
         public MusicController(IMusicRepository musicRepository)
         {
             _musicRepository = musicRepository;
@@ -57,6 +62,13 @@ namespace WAD11256API.Controllers
             }
             return new NoContentResult();
         }
+
+        public IMusicRepository Get_musicRepository()
+        {
+            return _musicRepository;
+        }
+
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

@@ -5116,11 +5116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Personal\\Wiut\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
+      "projectUniqueName": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
       "projectName": "WAD11256API",
-      "projectPath": "D:\\Personal\\Wiut\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
+      "projectPath": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
       "packagesPath": "C:\\Users\\N.Salokhiddinov\\.nuget\\packages\\",
-      "outputPath": "D:\\Personal\\Wiut\\WAD11256API\\WAD11256API\\obj\\",
+      "outputPath": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\N.Salokhiddinov\\AppData\\Roaming\\NuGet\\NuGet.Config",

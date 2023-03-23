@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IXRWtNsZSKtWLsr7x2VwGBu3LrFmSyuiPGrcB7gdq2fD0hqMCfLQSmaBnykOJkfWwJg6NNSjn1gm1mxRAjZ/xA==",
+  "dgSpecHash": "E4S2CPTo3p84ecYIrpn1fjQuYwh9fHZCeiDZCuXttBa4cd7t6eSOrHSVklUvi2DGqmkyISIHcC7RL88+yfWHjA==",
   "success": true,
-  "projectFilePath": "D:\\Personal\\Wiut\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
+  "projectFilePath": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\N.Salokhiddinov\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\N.Salokhiddinov\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WAD11256API.Models;
 
-namespace WAD11256API.Repository
+namespace WAD11256API.Interfaces
 {
     public interface IGenreRepository
     {

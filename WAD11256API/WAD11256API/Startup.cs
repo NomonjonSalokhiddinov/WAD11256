@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WAD11256API.Context;
+using WAD11256API.Interfaces;
 using WAD11256API.Repository;
 
 
@@ -34,6 +35,7 @@ namespace WAD11256API
             services.AddControllers();
             services.AddTransient<IMusicRepository, MusicRepository>();
             services.AddTransient<IGenreRepository, GenreRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
 

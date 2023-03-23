@@ -8,50 +8,50 @@ using WAD11256API.Models;
 
 namespace WAD11256API.Repository
 {
-    public class MusicRepository : IMusicRepository
+    public class UserRepository : IUserRepository
     {
         private readonly MusicContext _dbContext;
-        public MusicRepository(MusicContext dbContext)
+        public UserRepository(MusicContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public void DeleteMusic(int musicId)
+        public void DeleteUser(int userId)
         {
-            var music = _dbContext.Musics.Find(musicId);
-            _dbContext.Musics.Remove(music);
+            var user = _dbContext.Users.Find(userId);
+            _dbContext.Users.Remove(user);
             Save();
         }
-        public Music GetMusicById(int musicId)
+        public User GetUserById(int userId)
         {
-            var prod = _dbContext.Musics.Find(musicId);
+            var prod = _dbContext.Users.Find(userId);
             //_dbContext.Entry(prod).Reference(s => s.MusicGenre).Load();
             return prod;
         }
-        public IEnumerable<Music> GetMusics()
+        public IEnumerable<User> GetUsers()
         {
-            return _dbContext.Musics.ToList();
+            return _dbContext.Users.ToList();
             //.Include(s => s.MusicGenre).ToList();
         }
-        public void InsertMusic(Music music)
+        public void UpdateUser(User user)
         {
-            _dbContext.Add(music);
-            Save();
-        }
-        public void UpdateMusic(Music music)
-        {
-            _dbContext.Entry(music).State =
+            _dbContext.Entry(user).State =
            Microsoft.EntityFrameworkCore.EntityState.Modified;
             Save();
         }
-        
-        public IEnumerable<Music> GetMusicByGenre(Genre genre)
+        public IEnumerable<Music>GetMusicByUserID(int userID)
         {
             var music = _dbContext.Musics
-                .Where(m => m.MusicGenre == genre)
+                .Where(m => m.UserID == userID)
                 .ToListAsync();
 
             return (IEnumerable<Music>)music;
         }
+        public void InsertUser(User user)
+        {
+            _dbContext.Add(user);
+            Save();
+        }
+
         public void Save()
         {
             _dbContext.SaveChanges();
