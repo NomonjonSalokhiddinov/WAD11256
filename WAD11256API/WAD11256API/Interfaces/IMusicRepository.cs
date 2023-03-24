@@ -11,6 +11,7 @@ namespace WAD11256API.Interfaces
         void DeleteMusic(int musicid);
         Music GetMusicById(int Id);
         IEnumerable<Music> GetMusics();
+        IEnumerable<Music> GetMusicByUserID(int userID);
         IEnumerable<Music> GetMusicByGenre(Genre genre);
     }
 }

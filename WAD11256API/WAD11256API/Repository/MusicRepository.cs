@@ -43,7 +43,15 @@ namespace WAD11256API.Repository
            Microsoft.EntityFrameworkCore.EntityState.Modified;
             Save();
         }
-        
+        public IEnumerable<Music> GetMusicByUserID(int userID)
+        {
+            var music = _dbContext.Musics
+                .Where(m => m.UserID == userID)
+                .ToList();
+
+            return music;
+        }
+
         public IEnumerable<Music> GetMusicByGenre(Genre genre)
         {
             var music = _dbContext.Musics

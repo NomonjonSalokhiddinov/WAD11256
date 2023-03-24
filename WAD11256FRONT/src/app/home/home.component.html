@@ -1,0 +1,17 @@
+<div *ngIf="musicLoading">
+    <p>Loading</p>
+</div>
+<div *ngIf="!musicLoading">
+    <div>
+        <h1>Music List</h1>
+        <div class="musicGrid">
+            <div *ngFor="let music of musicList" class="musicItem">
+                <img [src]="music.imageLink" alt="Music Image">
+                <p>Name: {{ music.name }}</p>
+                <p>Author: {{ music.author }}</p>
+                <p>Publication Year: {{ music.publicationYear }}</p>
+                <p>Genre ID: {{ music.musicGenre }}</p>
+            </div>
+        </div>
+    </div>
+</div>

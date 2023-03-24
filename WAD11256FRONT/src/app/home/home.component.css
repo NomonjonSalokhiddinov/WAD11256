@@ -1,0 +1,16 @@
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.musicItem {
+    margin: 10px;
+    background-color: rgb(156, 156, 156);
+    width: 320px;
+}
+
+.musicGrid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

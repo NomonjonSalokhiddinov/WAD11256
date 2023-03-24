@@ -3,28 +3,28 @@ Go
 
 ----Create Users----
 insert into [dbo].Users
-([FirstName],[LastName])
-values ('John', 'Snow')
+([FirstName],[LastName], [Username], [Password])
+values ('John', 'Snow', 'jsnow', 'secret')
 
 go
 insert into [dbo].Users
-([FirstName],[LastName])
-values ('Carl', 'James')
+([FirstName],[LastName], [Username], [Password])
+values ('Carl', 'James', 'cjames', 'secret')
 
 go
 insert into [dbo].Users
-([FirstName],[LastName])
-values ('Bruce', 'Lee')
+([FirstName],[LastName], [Username], [Password])
+values ('Bruce', 'Lee', 'blee', 'secret')
 
 go
 insert into [dbo].Users
-([FirstName],[LastName])
-values ('Peter', 'Parker')
+([FirstName],[LastName], [Username], [Password])
+values ('Peter', 'Parker', 'pparker', 'secret')
 
 go
 insert into [dbo].Users
-([FirstName],[LastName])
-values ('Alisher', 'Morgenshtern')
+([FirstName],[LastName], [Username], [Password])
+values ('Alisher', 'Morgenshtern', 'amorgen', 'secret')
 go
 
 

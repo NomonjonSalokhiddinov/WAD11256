@@ -7,6 +7,7 @@ using WAD11256API.Interfaces;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace WAD11256API.Controllers
 {
@@ -61,6 +62,16 @@ namespace WAD11256API.Controllers
                 }
             }
             return new NoContentResult();
+        }
+        [HttpGet("user/{userId}")]
+        public IActionResult GetMusicByUserID(int userId)
+        {
+            var musics = _musicRepository.GetMusicByUserID(userId);
+            if (musics == null || !musics.Any())
+            {
+                return NotFound();
+            }
+            return new OkObjectResult(musics);
         }
 
         public IMusicRepository Get_musicRepository()

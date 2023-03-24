@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 using WAD11256API.Interfaces;
 using WAD11256API.Models;
+using WAD11256API.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,6 +16,7 @@ namespace WAD11256API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+
         public UsersController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -61,25 +64,20 @@ namespace WAD11256API.Controllers
             return new NoContentResult();
         }
 
-        // GET: api/Music/playlist/2 
-        [ApiController]
-        [Route("api/playlist")]
-        public class PlaylistController : ControllerBase
-        {
-            private readonly IUserRepository _userRepository;
+        //GET: api/users/playlist/2
+        //[HttpGet("playlist/{userId}")]
+        //public async Task<ActionResult<IEnumerable<Music>>> GetMusicByUserID(int userId)
+        //{
+        //    var music = await _userRepository.GetMusicByUserID(userId);
 
-            public PlaylistController(IUserRepository userRepository)
-            {
-                _userRepository = userRepository;
-            }
+        //    if (music == null || !music.Any())
+        //    {
+        //        return NotFound();
+        //    }
 
-            [HttpGet("{userId}")]
-            public Task<ActionResult<IEnumerable<Music>>> GetMusicByUserID(int userID)
-            {
-                var music = _userRepository.GetMusicByUserID(userID);
-                return (Task<ActionResult<IEnumerable<Music>>>)music;
-            }
-        }
+        //    return Ok(music);
+        //}
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

@@ -9,7 +9,7 @@ namespace WAD11256API.Interfaces
         void DeleteUser(int userId);
         User GetUserById(int userId);
         IEnumerable<User> GetUsers();
-        IEnumerable<Music> GetMusicByUserID(int userID);
+        //IEnumerable<Music> GetMusicByUserID(int userID);
         void UpdateUser(User user);
     }
 }
