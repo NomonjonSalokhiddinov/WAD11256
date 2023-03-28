@@ -1,17 +1,22 @@
-<h2>Registration</h2>
-<p>Fill in the form to create new user.</p>
-<form (submit)="onSubmit()">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+<div *ngIf="loading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
+</div>
+<div class="registration" *ngIf="!loading">
+    <h2>Registration</h2>
+    <p>Fill in the form to create new user.</p>
+    <form (submit)="onSubmit()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
 
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
 
-    <button type="submit">Submit</button>
-</form>
+        <button type="submit">Submit</button>
+    </form>
+</div>

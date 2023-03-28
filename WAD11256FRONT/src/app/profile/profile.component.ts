@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+interface User {
+  userID: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
-  firstName: string = '';
-  lastName: string = '';
-  username: string = '';
-
+  user!: User;
 
   ngOnInit() {
-    const user = localStorage.getItem('currentUser');
-    console.log(user)
+    const data = localStorage.getItem('currentUser')
+    if (data)
+      this.user = JSON.parse(data);
 
   }
 

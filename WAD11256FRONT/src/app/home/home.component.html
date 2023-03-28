@@ -1,16 +1,25 @@
-<div *ngIf="musicLoading">
-    <p>Loading</p>
+<div *ngIf="musicLoading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
 </div>
 <div *ngIf="!musicLoading">
     <div>
-        <h1>Music List</h1>
+        <div class="controls">
+            <div>
+                <h1>Welcome, <span class="bold">{{currentUser}}!</span></h1>
+                <p>Here is the list of songs</p>
+            </div>
+            <a href="/create-music" class="createMusic">
+                Add Music +
+            </a>
+        </div>
         <div class="musicGrid">
             <div *ngFor="let music of musicList" class="musicItem">
-                <img [src]="music.imageLink" alt="Music Image">
-                <p>Name: {{ music.name }}</p>
-                <p>Author: {{ music.author }}</p>
-                <p>Publication Year: {{ music.publicationYear }}</p>
-                <p>Genre ID: {{ music.musicGenre }}</p>
+                <div class="musicInfo">
+                    <img [src]="music.imageLink" alt="Music Image">
+                    <p class="name">{{ music.name }}</p>
+                    <p class="author">{{ music.author }}</p>
+                    <p class="yearandgenre">{{ music.publicationYear + " | " + music.musicGenre.name }}</p>
+                </div>
             </div>
         </div>
     </div>

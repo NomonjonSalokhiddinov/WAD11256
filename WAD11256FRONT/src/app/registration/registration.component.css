@@ -2,6 +2,15 @@ h2 {
     width: 100%;
     margin: 2rem auto;
     font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.registration {
+    animation: fadeInDown 0.5s ease-out forwards;
 }
 
 form {
@@ -13,7 +22,6 @@ form {
 
 label {
     font-size: 18px;
-    font-weight: bold;
     margin-top: 20px;
     text-align: left;
 }

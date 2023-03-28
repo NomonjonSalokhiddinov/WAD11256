@@ -1,16 +1,74 @@
-img {
-    height: 300px;
-    width: 300px;
-}
-
 .musicItem {
     margin: 10px;
-    background-color: rgb(156, 156, 156);
-    width: 320px;
+    padding: 20px;
+    background-color: rgb(242, 242, 242);
+    width: 210px;
+    animation: fadeInDown 0.5s ease-out forwards;
+    text-align: center;
+    border-radius: 30px;
+    transition: .2s all ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.163);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.createMusic {
+    padding: 10px 20px;
+    color: white;
+    background-color: green;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .2s all;
+}
+
+.createMusic:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.612);
+}
+
+.createMusic:active {
+    transform: scale(1.01);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.612);
+}
+
+.musicItem:hover {
+    transform: translate(-20px, 0);
+}
+
+
+.musicItem img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 20px;
+}
+
+.author {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.musicInfo {
+    height: 400px;
 }
 
 .musicGrid {
+    margin: auto;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.bold {
+    font-weight: 700;
+    color: blue;
 }

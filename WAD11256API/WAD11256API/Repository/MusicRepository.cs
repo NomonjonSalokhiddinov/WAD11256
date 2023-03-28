@@ -24,13 +24,12 @@ namespace WAD11256API.Repository
         public Music GetMusicById(int musicId)
         {
             var prod = _dbContext.Musics.Find(musicId);
-            //_dbContext.Entry(prod).Reference(s => s.MusicGenre).Load();
+            _dbContext.Entry(prod).Reference(s => s.MusicGenre).Load();
             return prod;
         }
         public IEnumerable<Music> GetMusics()
         {
-            return _dbContext.Musics.ToList();
-            //.Include(s => s.MusicGenre).ToList();
+            return _dbContext.Musics.Include(s => s.MusicGenre).ToList();
         }
         public void InsertMusic(Music music)
         {

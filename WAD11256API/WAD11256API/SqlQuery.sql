@@ -1,5 +1,9 @@
 ﻿use MusicDbApi
 Go
+insert into [dbo].Musics
+([UserId], [Name], [Author], [PublicationYear], [ImageLink], [MusicGenreID])
+values (1, 'asdasd', 'Big Baby Tape, kizaru', 2021, 'https://i.scdn.co/image/ab67616d0000b27371af28545729f60b3eca66f7', 1)
+go
 
 ----Create Users----
 insert into [dbo].Users

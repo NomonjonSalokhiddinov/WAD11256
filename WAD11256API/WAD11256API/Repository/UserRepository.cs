@@ -24,13 +24,11 @@ namespace WAD11256API.Repository
         public User GetUserById(int userId)
         {
             var prod = _dbContext.Users.Find(userId);
-            //_dbContext.Entry(prod).Reference(s => s.MusicGenre).Load();
             return prod;
         }
         public IEnumerable<User> GetUsers()
         {
             return _dbContext.Users.ToList();
-            //.Include(s => s.MusicGenre).ToList();
         }
         public void UpdateUser(User user)
         {
@@ -38,14 +36,6 @@ namespace WAD11256API.Repository
            Microsoft.EntityFrameworkCore.EntityState.Modified;
             Save();
         }
-        //public IEnumerable<Music>GetMusicByUserID(int userID)
-        //{
-        //    var music = _dbContext.Musics
-        //        .Where(m => m.UserID == userID)
-        //        .ToList();
-
-        //    return music;
-        //}
         public void InsertUser(User user)
         {
             _dbContext.Add(user);

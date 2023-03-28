@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,14 +6,20 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
   firstName: string = '';
   lastName: string = '';
   username: string = '';
   password: string = '';
+  loading: boolean = true;
 
   constructor(private http: HttpClient) { }
-
+  ngOnInit(): void {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
+  }
   onSubmit() {
     console.log(this.firstName, this.lastName, this.password);
     const url = 'http://localhost:42300/api/users';
@@ -31,11 +37,10 @@ export class RegistrationComponent {
       this.http.post(url, user)
         .subscribe((response) => {
           console.log(response);
+          localStorage.setItem("currentUser", JSON.stringify(user));
+          alert(`New user ${this.firstName} ${this.lastName} is added successfuly😀`);
+          window.location.href = "/";
         });
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      console.log(user)
-      alert(`New user ${this.firstName} ${this.lastName} is added successfuly😀`)
-
     }
     catch {
       console.log("Sorry, something went went wrong☹");

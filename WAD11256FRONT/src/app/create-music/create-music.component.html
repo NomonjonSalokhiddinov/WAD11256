@@ -1,1 +1,33 @@
-<p>create-music works!</p>
+<h1>Add New Music</h1>
+<p>Add new music to the list</p>
+<div *ngIf="currentUser">
+    <form>
+        <div>
+            <label for="musicName">Music Name:</label><br />
+            <input type="text" id="musicName" name="musicName" [(ngModel)]="inputName">
+        </div>
+        <div>
+            <label for="author">Author:</label><br />
+            <input type="text" id="author" name="author" [(ngModel)]="inputAuthor">
+        </div>
+        <div>
+            <label for="publicationYear">Publication Year:</label><br />
+            <input type="number" id="publicationYear" name="publicationYear" [(ngModel)]="inputPublicationYear">
+        </div>
+        <div>
+            <label for="imageLink">Album Cover Link:</label><br />
+            <input type="link" id="imageLink" name="imageLink" [(ngModel)]="inputImageLink">
+        </div>
+        <div>
+            <label for="genre">Genre:</label><br />
+            <select name="genre" id="genre" [(ngModel)]="inputGenre">
+                <option [value]="genre.id" *ngFor="let genre of genresList">{{genre.name}}</option>
+            </select>
+        </div>
+        <button type="submit" (click)="onSubmit()">Create</button>
+    </form>
+</div>
+<div *ngIf="!currentUser">
+    <h1>Oops!</h1>
+    <p>Please, <a href="/registration">SIGN UP</a> or <a href="/login">LOG IN</a> to add music🙂</p>
+</div>
