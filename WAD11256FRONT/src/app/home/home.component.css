@@ -1,13 +1,14 @@
 .musicItem {
-    margin: 10px;
+    width: 100%;
     padding: 20px;
+    margin: 2px 5px;
     background-color: rgb(242, 242, 242);
-    width: 210px;
     animation: fadeInDown 0.5s ease-out forwards;
     text-align: center;
     border-radius: 30px;
     transition: .2s all ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.163);
+
 }
 
 .controls {
@@ -48,7 +49,6 @@
 .name {
     font-size: 1.2rem;
     font-weight: 700;
-    height: 20px;
 }
 
 .author {
@@ -56,19 +56,44 @@
     font-weight: 300;
 }
 
-.musicInfo {
-    height: 400px;
-}
 
 .musicGrid {
-    margin: auto;
+    /* margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: flex-start; */
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-gap: 1.2em;
 }
 
 .bold {
     font-weight: 700;
     color: blue;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1800px) {
+    .musicGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .musicGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .musicGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .musicGrid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+    }
 }

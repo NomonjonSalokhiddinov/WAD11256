@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap');
 
+* {
+    box-sizing: border-box;
+
+}
+
 body {
     background-color: rgb(233, 233, 233);
     font-family: 'Poppins', sans-serif;
@@ -27,6 +32,16 @@ form {
     width: 100px;
     animation: spin 1.5s linear infinite forwards;
 
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .form {
+        width: 90% !important;
+    }
 }
 
 @keyframes fadeInDown {

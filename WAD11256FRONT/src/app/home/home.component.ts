@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       (res: Music[]) => {
         console.log(res);
         if (res) {
-          this.musicList = res;
+          this.musicList = res.reverse();
         }
         setTimeout(() => {
           this.musicLoading = false;

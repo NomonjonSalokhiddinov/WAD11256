@@ -20,6 +20,7 @@
         </div>
         <div>
             <label for="genre">Genre:</label><br />
+            <a href="/create-genre">Add new <strong>Genre</strong></a><br />
             <select name="genre" id="genre" [(ngModel)]="inputGenre">
                 <option [value]="genre.id" *ngFor="let genre of genresList">{{genre.name}}</option>
             </select>

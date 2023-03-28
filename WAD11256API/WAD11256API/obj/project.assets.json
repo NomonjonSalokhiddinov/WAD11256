@@ -5111,24 +5111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\N.Salokhiddinov\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Games\\MyFolder\\Nomon\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
+      "projectUniqueName": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
       "projectName": "WAD11256API",
-      "projectPath": "D:\\Games\\MyFolder\\Nomon\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Games\\MyFolder\\Nomon\\WAD11256\\WAD11256API\\WAD11256API\\obj\\",
+      "projectPath": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\WAD11256API.csproj",
+      "packagesPath": "C:\\Users\\N.Salokhiddinov\\.nuget\\packages\\",
+      "outputPath": "D:\\Personal\\Wiut\\WAD11256\\WAD11256API\\WAD11256API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\N.Salokhiddinov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5136,7 +5131,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://evisionsoftware.jfrog.io/evisionsoftware/api/nuget/dev-nuget": {},
+        "https://evisionsoftware.jfrog.io/evisionsoftware/api/nuget/ps-nuget": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -5170,12 +5167,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.32, 3.1.32]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

@@ -1,1 +1,18 @@
-<p>create-genre works!</p>
+<div *ngIf="isLoading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
+</div>
+<div *ngIf="!isLoading">
+    <form>
+        <h1>Create Genre</h1>
+        <p>Create new genre to a list of genres</p>
+        <div>
+            <label for="name">Genre Name:</label><br />
+            <input type="text" id="name" name="name" [(ngModel)]="inputName">
+        </div>
+        <div>
+            <label for="description">Description:</label><br />
+            <textarea type="text" id="description" name="description" [(ngModel)]="inputDescription"></textarea>
+        </div>
+        <button type="submit" (click)="onSubmit()">Create</button>
+    </form>
+</div>

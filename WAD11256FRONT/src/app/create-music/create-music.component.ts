@@ -59,7 +59,9 @@ export class CreateMusicComponent implements OnInit {
       author: this.inputAuthor,
       publicationYear: this.inputPublicationYear,
       imageLink: this.inputImageLink.length < 20 ? 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/music-icon-mohammed-jabir-ap.jpg' : this.inputImageLink,
-      musicGenre: this.genresList[this.inputGenre]
+      musicGenre: {
+        id: this.inputGenre * 1
+      }
     }
     console.log(inputData);
 
@@ -76,7 +78,8 @@ export class CreateMusicComponent implements OnInit {
         });
     }
     catch {
-
+      alert("Sorry, something went wrong😢")
+      return
     }
 
   }

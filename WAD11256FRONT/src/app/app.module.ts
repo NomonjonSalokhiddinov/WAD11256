@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateMusicComponent,
     CreateGenreComponent,
     ProfileComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,
