@@ -33,13 +33,14 @@ namespace WAD11256API.Repository
         }
         public void InsertMusic(Music music)
         {
+            music.MusicGenre =
+            _dbContext.Genres.Find(music.MusicGenre.ID);
             _dbContext.Add(music);
             Save();
         }
         public void UpdateMusic(Music music)
         {
-            _dbContext.Entry(music).State =
-           Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _dbContext.Entry(music).State = EntityState.Modified;
             Save();
         }
         public IEnumerable<Music> GetMusicByUserID(int userID)
@@ -54,10 +55,9 @@ namespace WAD11256API.Repository
         public IEnumerable<Music> GetMusicByGenre(Genre genre)
         {
             var music = _dbContext.Musics
-                .Where(m => m.MusicGenre == genre)
-                .ToListAsync();
-
-            return (IEnumerable<Music>)music;
+                .Where(m => m.MusicGenre == genre);
+                
+            return music;
         }
         public void Save()
         {
