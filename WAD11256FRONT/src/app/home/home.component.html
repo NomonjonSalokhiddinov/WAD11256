@@ -19,6 +19,7 @@
                     <p class="name">{{ music.name }}</p>
                     <p class="author">{{ music.author }}</p>
                     <p class="yearandgenre">{{ music.publicationYear + " | " + music.musicGenre.name }}</p>
+                    <p [routerLink]="'music-details/' + music.id" class="detailsBtn">Details</p>
                 </div>
             </div>
         </div>

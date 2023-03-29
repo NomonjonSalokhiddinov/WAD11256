@@ -1,0 +1,15 @@
+<div *ngIf="isLoading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
+</div>
+<div *ngIf="!isLoading" class="musicInfo">
+    <button (click)="goBack()" class="goBack">⬅ Go Back</button>
+    <h1>Detailed Music Information</h1>
+    <img [src]="[music.imageLink]" alt="musicImage">
+    <h2>{{music.name}}</h2>
+    <p>{{music.author}}</p>
+    <p>{{music.publicationYear + " || " + music.musicGenre.name}}
+    <div class="controls">
+        <a href="#" class="controlItems edit">Edit</a>
+        <button class="controlItems delete" (click)="delete()">Delete</button>
+    </div>
+</div>

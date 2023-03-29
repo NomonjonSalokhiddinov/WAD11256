@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("currentUser", JSON.stringify(list[i]));
         this.isLoading = false;
         success = true;
-        alert("Success")
+        alert("Success✅")
         window.location.href = "/";
         break;
       }

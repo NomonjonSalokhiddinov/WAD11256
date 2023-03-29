@@ -34,6 +34,10 @@ form {
 
 }
 
+.fadein {
+    animation: fadeInDown 0.5s ease-out forwards;
+}
+
 @media screen and (max-width: 500px) {
     .wrapper {
         width: 90%;

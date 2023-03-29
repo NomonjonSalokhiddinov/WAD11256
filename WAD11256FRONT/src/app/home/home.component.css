@@ -72,6 +72,30 @@
     color: blue;
 }
 
+.detailsBtn {
+    display: block;
+    padding: .5rem 0;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    border-radius: 1rem;
+    border-style: none;
+    text-decoration: none;
+    color: white;
+    transition: .2s all;
+    background-color: rgb(52, 144, 255);
+}
+
+.detailsBtn:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.307);
+}
+
+.detailsBtn:active {
+    transform: scale(1.01);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.612);
+}
 
 @media (min-width: 1200px) and (max-width: 1800px) {
     .musicGrid {

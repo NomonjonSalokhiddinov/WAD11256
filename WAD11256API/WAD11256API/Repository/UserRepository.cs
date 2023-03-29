@@ -26,6 +26,10 @@ namespace WAD11256API.Repository
             var prod = _dbContext.Users.Find(userId);
             return prod;
         }
+        public User GetUserByUsername(string username)
+        {
+            return _dbContext.Set<User>().FirstOrDefault(u => u.Username == username);
+        }
         public IEnumerable<User> GetUsers()
         {
             return _dbContext.Users.ToList();

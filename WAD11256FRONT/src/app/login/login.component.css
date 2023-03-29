@@ -9,9 +9,10 @@ p {
     text-align: center;
 }
 
-.registration {
+.login {
     animation: fadeInDown 0.5s ease-out forwards;
 }
+
 
 form {
     display: flex;

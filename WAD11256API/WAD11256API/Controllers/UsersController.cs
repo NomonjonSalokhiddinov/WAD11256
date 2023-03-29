@@ -63,8 +63,16 @@ namespace WAD11256API.Controllers
             }
             return new NoContentResult();
         }
+        // GET: api/Users/elonmusk
+        [HttpGet, Route("{username}", Name = "GetUs")]
+        public IActionResult Get(string username)
+        {
+            var user = _userRepository.GetUserByUsername(username);
+            return new OkObjectResult(user);
+            //return "value";
+        }
 
-        //GET: api/users/playlist/2
+        ////GET: api/users/playlist/2
         //[HttpGet("playlist/{userId}")]
         //public async Task<ActionResult<IEnumerable<Music>>> GetMusicByUserID(int userId)
         //{

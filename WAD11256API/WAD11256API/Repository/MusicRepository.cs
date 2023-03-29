@@ -46,8 +46,7 @@ namespace WAD11256API.Repository
         public IEnumerable<Music> GetMusicByUserID(int userID)
         {
             var music = _dbContext.Musics
-                .Where(m => m.UserID == userID)
-                .ToList();
+                .Where(m => m.UserID == userID).Include(s => s.MusicGenre).ToList();
 
             return music;
         }

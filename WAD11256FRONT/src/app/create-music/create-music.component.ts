@@ -65,7 +65,7 @@ export class CreateMusicComponent implements OnInit {
     }
     console.log(inputData);
 
-    if (!this.inputName || !this.inputAuthor || !this.inputPublicationYear || !this.inputImageLink) {
+    if (!this.inputName || !this.inputAuthor || !this.inputPublicationYear) {
       alert("Please enter all required fields");
       return;
     }
@@ -81,6 +81,5 @@ export class CreateMusicComponent implements OnInit {
       alert("Sorry, something went wrong😢")
       return
     }
-
   }
 }

@@ -1,6 +1,44 @@
-<div class="profile">
-    <h1>Profile</h1>
-    <p>First Name: {{ user.firstName }}</p>
-    <p>Last Name: {{ user.lastName }}</p>
-    <p>Username: {{ user.username }}</p>
+<div class="profile fadein" *ngIf="user">
+    <div>
+        <h1>User Profile</h1>
+        <p>Information about the current user.</p>
+        <div class="card">
+            <div class="card-body">
+                <img src="../../assets/user.png" alt="empty-user" class="profileImage">
+                <div class="info">
+                    <h5 class="card-title">{{ firstName }} {{ lastName }}</h5>
+                    <p class="card-text">@{{ username }}</p>
+                    <div class="userControls">
+                        <a [href]="" class="controlBtn edit">Edit</a>
+                        <button class="controlBtn logout" (click)="logOut()">Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <div>
+            <h1>Music List</h1>
+            <p>List of your songs</p>
+        </div>
+        <a href="/create-music" class="createMusic">
+            Add Music +
+        </a>
+    </div>
+    <div class="musicGrid" *ngIf="musicList">
+        <div *ngFor="let music of musicList" class="musicItem">
+            <div class="musicInfo">
+                <img [src]="music.imageLink" alt="Music Image">
+                <p class="name">{{ music.name }}</p>
+                <p class="author">{{ music.author }}</p>
+                <p class="yearandgenre">{{ music.publicationYear + " | " + music.musicGenre.name }}</p>
+                <p [routerLink]="'../music-details/' + music.id" class="detailsBtn">Details</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!user" class="fadein">
+    <h1>Oops!</h1>
+    <p>Please, <a href="/registration">SIGN UP</a> or <a href="/login">LOG IN</a> to view the profile🙂</p>
 </div>
