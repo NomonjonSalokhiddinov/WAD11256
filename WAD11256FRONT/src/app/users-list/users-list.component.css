@@ -1,0 +1,56 @@
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.307);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+}
+
+h3 {
+    font-size: .7rem;
+    font-weight: 300;
+}
+
+
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+
+.userInfoItem {
+    margin-right: 3rem;
+}
+
+.userInfoItem p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+img {
+    height: 100px;
+    border-radius: 1rem;
+}
+
+.controlBtn {
+    padding: 10px 1.5rem;
+    border-radius: .5rem;
+    color: white;
+    border-style: none;
+    background-color: rgb(54, 194, 57);
+    font-family: 'Poppins', sans-serif;
+}
+
+.controlBtn p {
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 1350px) {
+    .user {
+        display: flex;
+        flex-direction: column;
+    }
+}

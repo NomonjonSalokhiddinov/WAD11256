@@ -14,6 +14,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicDetailsComponent } from './music-details/music-details.component';
+import { UsersMusicComponent } from './users-music/users-music.component';
+import { EditMusicComponent } from './edit-music/edit-music.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { MusicDetailsComponent } from './music-details/music-details.component';
     ProfileComponent,
     UserDetailsComponent,
     MusicDetailsComponent,
+    UsersMusicComponent,
+    EditMusicComponent,
   ],
   imports: [
     BrowserModule,

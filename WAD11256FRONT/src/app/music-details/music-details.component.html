@@ -9,7 +9,7 @@
     <p>{{music.author}}</p>
     <p>{{music.publicationYear + " || " + music.musicGenre.name}}
     <div class="controls">
-        <a href="#" class="controlItems edit">Edit</a>
+        <p [routerLink]="'../../edit-music/' + music.id" class="controlItems edit">Edit</p>
         <button class="controlItems delete" (click)="delete()">Delete</button>
     </div>
 </div>

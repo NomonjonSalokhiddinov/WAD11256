@@ -28,11 +28,11 @@ export class MusicDetailsComponent implements OnInit {
   music!: Music;
   isLoading = false;
 
-  constructor(private http: HttpClient, private route: Router, private location: Location) { }
+  constructor(private http: HttpClient, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
     this.isLoading = true;
-    const url = this.route.url;
+    const url = this.router.url;
     const id = url.split("/").splice(-1)[0];
     const requestURL = 'http://localhost:42300/api/music/' + id
     try {
@@ -54,7 +54,7 @@ export class MusicDetailsComponent implements OnInit {
   delete() {
     const requestURL = 'http://localhost:42300/api/music/' + this.music.id
     this.http.delete(requestURL).subscribe(() => {
-      window.location.href = '/';
+      this.router.navigate(['/']);
     })
   }
   goBack(): void {

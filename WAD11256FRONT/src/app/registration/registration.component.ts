@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 interface User {
   userID: number;
@@ -22,27 +24,10 @@ export class RegistrationComponent implements OnInit {
   loading: boolean = true;
   usersList!: User[];
 
-  constructor(private http: HttpClient) { }
-  checkRegister(list: User[], username: string, password: string) {
-    var success = false;
-    for (let i = 0; i < list.length; i++) {
-      if (username == list[i].username && password == list[i].password) {
-        localStorage.setItem("currentUser", JSON.stringify(list[i]));
-        this.loading = false;
-        success = true;
-        window.location.href = "/";
-        break;
-      }
-      else {
-        continue;
-      }
-    }
-    if (!success) {
-      this.loading = false;
-      alert('Check credentials and try again🙂')
-    }
-  }
+  constructor(private http: HttpClient, private router: Router) { }
+
   ngOnInit(): void {
+    console.log("user" + localStorage.getItem("currentUser"))
     this.loading = true
     setTimeout(() => {
       this.loading = false;
@@ -62,7 +47,7 @@ export class RegistrationComponent implements OnInit {
       const user = {
         firstName: this.firstName,
         lastName: this.lastName,
-        username: this.username,
+        username: this.username.toLowerCase(),
         password: this.password
       }
       if (!this.firstName || !this.lastName || !this.password) {
@@ -72,9 +57,12 @@ export class RegistrationComponent implements OnInit {
       this.http.post(url, user)
         .subscribe((response) => {
           console.log(response);
-          this.checkRegister(this.usersList, this.username, this.password)
+          localStorage.setItem('currentUser', JSON.stringify(response))
+          setTimeout(() => {
+            console.log("Wait")
+          }, 1000);
           alert(`New user ${this.firstName} ${this.lastName} is added successfuly😀`);
-          window.location.href = "/";
+          this.router.navigate(['/']);
         });
     }
     catch {

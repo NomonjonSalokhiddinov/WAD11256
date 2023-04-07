@@ -9,6 +9,8 @@ import { CreateGenreComponent } from './create-genre/create-genre.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { MusicDetailsComponent } from './music-details/music-details.component';
+import { UsersMusicComponent } from './users-music/users-music.component';
+import { EditMusicComponent } from './edit-music/edit-music.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'create-genre', component: CreateGenreComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user-details/:id', component: UserDetailsComponent },
-  { path: 'music-details/:id', component: MusicDetailsComponent }
+  { path: 'music-details/:id', component: MusicDetailsComponent },
+  { path: 'users-music/:id', component: UsersMusicComponent },
+  { path: 'edit-music/:id', component: EditMusicComponent }
 ];
 
 @NgModule({

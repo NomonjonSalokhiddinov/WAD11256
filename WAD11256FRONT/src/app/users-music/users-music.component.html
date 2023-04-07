@@ -1,0 +1,23 @@
+<div *ngIf="isLoading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
+</div>
+<div *ngIf="musicList.length === 0">
+    <h1>Music list is empty</h1>
+</div>
+<div *ngIf="!isLoading">
+    <div>
+        <h1>Users Music</h1>
+        <p>Here is the user's music list.</p>
+        <div class="musicGrid">
+            <div *ngFor="let music of musicList" class="musicItem">
+                <div class="musicInfo">
+                    <img [src]="music.imageLink" alt="Music Image">
+                    <p class="name">{{ music.name }}</p>
+                    <p class="author">{{ music.author }}</p>
+                    <p class="yearandgenre">{{ music.publicationYear + " | " + music.musicGenre.name }}</p>
+                    <p [routerLink]="'music-details/' + music.id" class="detailsBtn">Details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

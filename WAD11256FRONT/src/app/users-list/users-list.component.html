@@ -1,1 +1,29 @@
-<p>users-list works!</p>
+<div *ngIf="isLoading" class="loader">
+    <img src="../../assets/loader.png" alt="loader">
+</div>
+<div *ngIf="!isLoading">
+    <h1>Users list</h1>
+    <p>Here is the list of the users that exist in the</p>
+    <div *ngFor="let user of usersList" class="user fadein">
+        <div class="userInfo">
+            <img src="../../assets/user.png" alt="user" class="userInfoItem">
+            <div class="userInfoItem">
+                <h3>First Name:</h3>
+                <p>{{user.firstName}}</p>
+            </div>
+            <div class="userInfoItem">
+                <h3>Last Name:</h3>
+                <p>{{user.lastName}}</p>
+            </div>
+            <div class="userInfoItem">
+                <h3>Username:</h3>
+                <p>@{{user.username}}</p>
+            </div>
+        </div>
+        <div>
+            <button class="controlBtn">
+                <p [routerLink]="'../users-music/' + user.userID">View User's Songs</p>
+            </button>
+        </div>
+    </div>
+</div>
